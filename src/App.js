@@ -5,7 +5,7 @@ import ExpenseIncome from './components/ExpenseIncome';
 import History from './components/History';
 import AddTransaction from './components/AddTransaction';
 import './App.css';
-import GlobalProvider , {GlobalContext}from './context/GlobalState';
+import GlobalProvider from './context/GlobalState';
 
 function App() {
   return (

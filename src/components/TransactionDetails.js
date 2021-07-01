@@ -13,7 +13,7 @@ const TransactionDetails = () => {
     const newTransaction= transactions.find(transaction => transaction.id === parseInt(id)) 
     setText(newTransaction.text)
     setAmount(newTransaction.amount)
-  }, [])
+  }, [id, transactions])
 
     return (
         <div className = "wrapper">
