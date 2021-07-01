@@ -9,6 +9,10 @@ const AddTransaction = () => {
   const inputRef = useRef(null)
   const onSubmit = (e) =>{
     e.preventDefault();
+    if(text===''){
+      alert('enter a valid description')
+      return false
+    }
     let transaction = {
       id: ids[ids.length-1] + 1,
       text,
