@@ -6,11 +6,11 @@ import History from './components/History';
 import AddTransaction from './components/AddTransaction';
 import './App.css';
 import GlobalProvider , {GlobalContext}from './context/GlobalState';
-import {BrowserRouter as Switch, Router, Route} from 'react-router-dom'
+
 function App() {
   return (
-    <>
-    <Router>
+  <>
+ 
        <GlobalProvider>
        <div className = "wrapper">
        <Header />
@@ -20,8 +20,8 @@ function App() {
        <AddTransaction/>
        </div>
        </GlobalProvider>
-       </Router>
-    </>
+      
+  </>
   );
 }
 
