@@ -1,10 +1,13 @@
 import React, {useState, useContext, useEffect, useRef} from 'react'
 import { GlobalContext } from '../context/GlobalState'
+import Modal from './Modal'
+
 
 const AddTransaction = () => {
   const {AddTransaction, transactions} = useContext(GlobalContext)
   const [text, setText] = useState("")
   const [amount, setAmount] = useState('0')
+  const [modal, setModal] = useState(false)
   const ids = transactions.map(transaction => transaction.id)
   const inputRef = useRef(null)
   const onSubmit = (e) =>{
@@ -19,8 +22,9 @@ const AddTransaction = () => {
       amount: parseFloat(amount)
     }
     AddTransaction(transaction)
-    setAmount('')
-    setText('')
+    setModal(true)
+  
+    
   }
 
   useEffect(() =>{
@@ -55,8 +59,24 @@ const AddTransaction = () => {
               </div>
               <button className="btn" type="submit"> Add Transaction</button>
             </form>
+             {modal === true ? (
+                <Modal >
+           
+                  
+                  <div className="successful">
+                  <h4 className="close" onClick = {() => {
+                    setModal(false)
+                    setAmount('')
+                    setText('')
+                  }}>×</h4>
+                    <h1>Transaction Successful✅</h1>
+                    <h2 className = {amount < 0 ? "expense" : "income"}>{amount < 0 ? "-" : ""}${Math.abs(amount)} {amount < 0 ? "spent" : "received"}</h2>
+                  </div>
+             
+              </Modal>
+      ) : null}
         </div>
-
+      
     )
 }
 

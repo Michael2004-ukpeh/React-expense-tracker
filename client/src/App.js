@@ -12,13 +12,10 @@ function App() {
   <>
  
        <GlobalProvider>
-       <div className = "wrapper">
-       <Header />
        <Balance/>
        <ExpenseIncome/>
        <History/>
        <AddTransaction/>
-       </div>
        </GlobalProvider>
       
   </>

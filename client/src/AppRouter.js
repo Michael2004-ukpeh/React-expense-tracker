@@ -9,6 +9,7 @@ const AppRouter = () => {
  return (
   <GlobalProvider>
    <BrowserRouter>
+   <div className = "wrapper">
     <Header />
     <Switch>
      <Route exact path="/">
@@ -18,7 +19,9 @@ const AppRouter = () => {
       <TransactionDetails />
      </Route>
     </Switch>
+    </div>
    </BrowserRouter>
+   
   </GlobalProvider>
  );
 };
