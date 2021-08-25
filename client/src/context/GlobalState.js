@@ -3,10 +3,6 @@ import reducer from './reducer'
 
 const firstState = {
     transactions:  [
-  { id: 1, text: 'Flower', amount: -20 },
-  { id: 2, text: 'Salary', amount: 300 },  
-  { id: 3, text: 'Book', amount: -10 },
-  { id: 4, text: 'Camera', amount: 150 }
  ]
 }
 
@@ -15,6 +11,8 @@ const GlobalProvider = ({children}) => {
     const [state, dispatch] = useReducer(reducer, firstState)
     
     const AddTransaction = (transaction) =>{
+        console.log(transaction)
+        console.log(state.transactions)
         dispatch({type: 'ADD_TRANSACTION', payload: transaction})
     }
     const removeTransaction = (id) =>{

@@ -7,14 +7,14 @@ const Transaction = ({id, text, amount}) => {
     let sign = amount < 0 ? '-' : '+'
     let type = amount < 0 ? 'expense' : 'income'
     return (
-       <Link to ={`/transaction/${id}`}><div className={`transaction ${type}-border`}>
-               <p>{text}</p>
+      <div className={`transaction ${type}-border`}>
+               <Link style = {{ textDecoration: "underline" , color: 'black'}}to ={`/transaction/${id}`}><p>{text}</p></Link> 
                <p className={type}>{sign}${amountAbs.toFixed(2)}</p>
                <span className = {`close-item ${type}`} 
                onClick = {() => removeTransaction(id)}
                >x</span>
         </div>
-        </Link> 
+       
     )
 }
 

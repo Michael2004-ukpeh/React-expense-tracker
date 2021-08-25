@@ -13,14 +13,14 @@ const TransactionDetails = () => {
     const newTransaction= transactions.find(transaction => transaction.id === parseInt(id)) 
     setText(newTransaction.text)
     setAmount(newTransaction.amount)
-  }, [])
+  }, [id, transactions])
 
     return (
-        <div className = "wrapper">
-            <h1>Transaction Details</h1>
+        <div style={{width: "80%"}} className = "wrapper">
+            <h1 style = {{textAlign: 'center'}}>Transaction Details</h1>
              <h2>Description : {text}</h2>
-             <h2>Amount : ${amount}</h2>
-             <Link to = "/" className ="btn" > Go Back</Link>
+             <h2 className ={amount < 0 ? "expense" : "income"}>Amount : {amount < 0 ? "-" : ""}${Math.abs(amount)}</h2>
+             <Link to = "/" className ="btn" style={{textAlign: "center", textDecoration: 'none'}}> Go Back</Link>
         </div>
     )
 }
