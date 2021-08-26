@@ -4,11 +4,11 @@ import Modal from './Modal'
 
 
 const AddTransaction = () => {
-  const {AddTransaction, transactions} = useContext(GlobalContext)
+  const {AddTransaction} = useContext(GlobalContext)
   const [text, setText] = useState("")
   const [amount, setAmount] = useState('0')
   const [modal, setModal] = useState(false)
-  const ids = transactions.map(transaction => transaction.id)
+ 
   const inputRef = useRef(null)
   const onSubmit = (e) =>{
     e.preventDefault();
@@ -17,7 +17,6 @@ const AddTransaction = () => {
       return false
     }
     let transaction = {
-      id: ids[ids.length-1] + 1,
       text,
       amount: parseFloat(amount)
     }

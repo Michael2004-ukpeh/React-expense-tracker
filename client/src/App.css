@@ -13,8 +13,6 @@ body {
     font-family: Gilroy, sans-serif;
 }
 
-
-
 .close {
     color: #eee;
     font-size: 3rem;
@@ -45,8 +43,8 @@ body {
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    width: 70%;
-    max-width: 500px
+    width: 90%;
+    max-width: 900px;
 }
 
 .history h3,

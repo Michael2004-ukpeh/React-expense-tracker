@@ -1,7 +1,7 @@
 import React, {useContext} from 'react'
 import { GlobalContext } from '../context/GlobalState'
 import { Link } from 'react-router-dom'
-const Transaction = ({id, text, amount}) => {
+const Transaction = ({_id:id, text, amount}) => {
     const {removeTransaction}  = useContext(GlobalContext)
     let amountAbs = amount < 0 ? Math.abs(amount) : amount
     let sign = amount < 0 ? '-' : '+'

@@ -16,7 +16,7 @@ const getAllTransactions = asyncWrapper(async(req, res) =>{
 })
 
 const createTransaction = asyncWrapper(async(req,res,next) =>{
-const{ description,amount} = req.body
+
  const transaction = await Transaction.create(req.body)
  return res.status(201).json({
      success: true,
