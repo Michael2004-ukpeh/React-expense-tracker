@@ -16,10 +16,14 @@
     },
     "scripts": {
         "start": "node app",
+        "build": "cd client && npm install && npm run build",
         "server": "nodemon app",
         "client": "npm start --prefix client",
         "dev": "concurrently \"npm run server\" \"npm run client\"",
         "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "engines": {
+        "node": "14.16.1"
     },
     "repository": {
         "type": "git",
